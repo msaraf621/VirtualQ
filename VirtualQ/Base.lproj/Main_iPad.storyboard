@@ -1,0 +1,1218 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="XS4-ta-zJF">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <scenes>
+        <!--Opening Screen View Controller-->
+        <scene sceneID="nwa-bD-HyH">
+            <objects>
+                <viewController storyboardIdentifier="OpeningScreen" id="XS4-ta-zJF" customClass="OpeningScreenViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xwe-K0-6oT"/>
+                        <viewControllerLayoutGuide type="bottom" id="czz-XS-Jiq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lyN-v7-2id">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Searching for lines around you.." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSb-Em-AmX">
+                                <rect key="frame" x="45" y="949" width="686" height="38"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SRD-h3-QGI" customClass="APRoundedButton">
+                                <rect key="frame" x="581" y="51" width="170" height="170"/>
+                                <color key="backgroundColor" red="1" green="0.50323167020000004" blue="0.066582127389999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="22"/>
+                                <state key="normal" title="Open Line">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="openLineTapped:" destination="XS4-ta-zJF" eventType="touchUpInside" id="HVX-KE-hkR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hc6-FQ-Obj" customClass="APRoundedButton">
+                                <rect key="frame" x="314" y="437" width="170" height="170"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="anywait">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="anyWaitTapped:" destination="XS4-ta-zJF" eventType="touchUpInside" id="IWH-KS-BGF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="anyWaitButton" destination="Hc6-FQ-Obj" id="HPp-rg-q0a"/>
+                        <outlet property="openLineButton" destination="SRD-h3-QGI" id="fTl-YC-3EU"/>
+                        <outlet property="searchingLabel" destination="iSb-Em-AmX" id="hKg-4y-trY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lEA-Sa-hoy" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-366" y="-399"/>
+        </scene>
+        <!--Open Queue View Controller-->
+        <scene sceneID="Dzf-ml-A5T">
+            <objects>
+                <viewController storyboardIdentifier="OpenQueue" id="BPh-5I-lhy" customClass="OpenQueueViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rgY-bJ-VCE"/>
+                        <viewControllerLayoutGuide type="bottom" id="eJ7-2R-7UF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Scx-jg-o5u">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter name of your line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J4Q-a6-tVN">
+                                <rect key="frame" x="30" y="107" width="699" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.95719126040000002" blue="0.23581673010000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BPh-5I-lhy" id="Tih-Da-Mju"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="one user can line up more people" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1LN-6n-d2H">
+                                <rect key="frame" x="86" y="329" width="354" height="28"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Open and manage a line" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GIH-A1-pwO">
+                                <rect key="frame" x="127" y="36" width="335" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.7532282777" blue="0.68631251250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FqQ-Zm-FnG" customClass="APRoundedButton">
+                                <rect key="frame" x="259" y="649" width="250" height="250"/>
+                                <color key="backgroundColor" red="1" green="0.65032703020000004" blue="0.45376402269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Open Line">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="openLineTapped:" destination="BPh-5I-lhy" eventType="touchUpInside" id="dcK-Wh-yoa"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hPA-lB-jS4" customClass="GCPlaceholderTextView">
+                                <rect key="frame" x="29" y="156" width="699" height="93"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BPh-5I-lhy" id="pku-1o-KcS"/>
+                                </connections>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="use current location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UR2-aB-X9z">
+                                <rect key="frame" x="86" y="281" width="354" height="29"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7NM-pw-lp0">
+                                <rect key="frame" x="12" y="8" width="96" height="91"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1XA-7d-fwU" customClass="APRoundedButton">
+                                        <rect key="frame" x="20" y="21" width="50" height="50"/>
+                                        <color key="backgroundColor" red="1" green="0.50323167020000004" blue="0.066582127389999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="tintColor" red="1" green="0.7532282777" blue="0.68631251250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                                <integer key="value" value="11"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="minusButtonTapped:" destination="BPh-5I-lhy" eventType="touchUpInside" id="BQ0-kv-3zw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="V34-Nz-kJK"/>
+                    <connections>
+                        <outlet property="currentLocationTitleLabel" destination="UR2-aB-X9z" id="1Jr-xm-5oH"/>
+                        <outlet property="lineName" destination="J4Q-a6-tVN" id="e1e-3f-dlm"/>
+                        <outlet property="lineUpUserTitleLabel" destination="1LN-6n-d2H" id="DjX-00-l4o"/>
+                        <outlet property="openLineButton" destination="FqQ-Zm-FnG" id="U38-PZ-lzd"/>
+                        <outlet property="quitManageQueueButton" destination="1XA-7d-fwU" id="AdX-TV-Ndc"/>
+                        <outlet property="shortDesc" destination="hPA-lB-jS4" id="Sh8-yN-LE3"/>
+                        <outlet property="titleLable" destination="GIH-A1-pwO" id="Jsd-19-UiK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jpq-09-Vvu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="632" y="-394"/>
+        </scene>
+        <!--Manage Queue View Controller-->
+        <scene sceneID="u5R-5J-UBt">
+            <objects>
+                <viewController storyboardIdentifier="ManageQueue" id="wXY-Gm-K8O" customClass="ManageQueueViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1aR-ZQ-ljp"/>
+                        <viewControllerLayoutGuide type="bottom" id="pin-2h-Ze5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Rme-Eu-PoS">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0pb-Ng-uQM" customClass="CounterView">
+                                <rect key="frame" x="0.0" y="719" width="768" height="299"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="counter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IhQ-qt-QR7">
+                                        <rect key="frame" x="319" y="0.0" width="130" height="27"/>
+                                        <color key="backgroundColor" red="1" green="0.50323167020000004" blue="0.066582127389999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No one in the line!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcf-En-2ze">
+                                        <rect key="frame" x="237" y="124" width="295" height="37"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Drag in &quot;Next&quot; for calling" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9o-56-YDv">
+                                        <rect key="frame" x="40" y="256" width="688" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.65032703020000004" blue="0.45376402269999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0 people are in the line" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXN-hy-WNM">
+                                <rect key="frame" x="222" y="44" width="325" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BLU-GX-GAJ" customClass="APRoundedButton">
+                                <rect key="frame" x="344" y="565" width="80" height="80"/>
+                                <color key="backgroundColor" red="1" green="0.7532282777" blue="0.68631251250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fr2-Jp-MHm" customClass="APRoundedButton">
+                                <rect key="frame" x="344" y="395" width="80" height="80"/>
+                                <color key="backgroundColor" red="1" green="0.7532282777" blue="0.68631251250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zCU-65-HT8" customClass="APRoundedButton">
+                                <rect key="frame" x="344" y="252" width="80" height="80"/>
+                                <color key="backgroundColor" red="1" green="0.7532282777" blue="0.68631251250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bYw-Vz-uUQ" customClass="APRoundedButton">
+                                <rect key="frame" x="344" y="108" width="80" height="80"/>
+                                <color key="backgroundColor" red="1" green="0.7532282777" blue="0.68631251250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EdR-YB-GyN" customClass="APRoundedButton">
+                                <rect key="frame" x="42" y="39" width="50" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.50323167020000004" blue="0.066582127389999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="tintColor" red="1" green="0.65032703020000004" blue="0.45376402269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                        <integer key="value" value="11"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="quitQueueButtonTapped:" destination="wXY-Gm-K8O" eventType="touchUpInside" id="dsA-B3-vHf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8j-5O-w2c" customClass="APRoundedButton">
+                                <rect key="frame" x="344" y="-37" width="80" height="80"/>
+                                <color key="backgroundColor" red="1" green="0.7532282777" blue="0.68631251250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85q-Dq-Uxg">
+                                <rect key="frame" x="498" y="587" width="135" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="not-xh-w2I">
+                                <rect key="frame" x="455" y="415" width="135" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yYl-Um-lw2">
+                                <rect key="frame" x="455" y="272" width="135" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ua5-Il-RTW">
+                                <rect key="frame" x="455" y="128" width="135" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="bottomView" destination="0pb-Ng-uQM" id="mJE-Wk-rCo"/>
+                        <outlet property="counterLabel" destination="IhQ-qt-QR7" id="y8c-Pf-1ah"/>
+                        <outlet property="counterStatusLabel" destination="jcf-En-2ze" id="D2S-ZK-ZTy"/>
+                        <outlet property="dragNextLabel" destination="t9o-56-YDv" id="Hnx-zB-2WN"/>
+                        <outlet property="quitManageQueueButton" destination="EdR-YB-GyN" id="kY0-SS-JB5"/>
+                        <outlet property="user0_partySizeLabel" destination="85q-Dq-Uxg" id="AZP-4T-9ZL"/>
+                        <outlet property="user1_partySizeLabel" destination="not-xh-w2I" id="okO-xW-8qn"/>
+                        <outlet property="user2_partySizeLabel" destination="yYl-Um-lw2" id="8Dt-mz-KVZ"/>
+                        <outlet property="user3_partySizeLabel" destination="Ua5-Il-RTW" id="icT-Rp-aMb"/>
+                        <outlet property="userButton0" destination="BLU-GX-GAJ" id="Dhu-VZ-574"/>
+                        <outlet property="userButton1" destination="Fr2-Jp-MHm" id="hOW-Cp-Iaj"/>
+                        <outlet property="userButton2" destination="zCU-65-HT8" id="Adh-Br-QVC"/>
+                        <outlet property="userButton3" destination="bYw-Vz-uUQ" id="D0I-MU-vwx"/>
+                        <outlet property="userButton4" destination="l8j-5O-w2c" id="fEZ-SA-LfE"/>
+                        <outlet property="waitingUserLabel" destination="AXN-hy-WNM" id="M8U-BU-7OA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dcn-TX-86P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1675" y="-407"/>
+        </scene>
+        <!--Quit Queue View Controller-->
+        <scene sceneID="RfH-Mu-TBh">
+            <objects>
+                <viewController storyboardIdentifier="QuitQueue" id="Gat-P9-B5e" customClass="QuitQueueViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GVh-Uj-Eoy"/>
+                        <viewControllerLayoutGuide type="bottom" id="s1f-J1-aSz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="We2-y9-X38">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Restaurant Name Address" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="202" translatesAutoresizingMaskIntoConstraints="NO" id="8jO-V5-awd">
+                                <rect key="frame" x="283" y="20" width="202" height="69"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Do you want to quit your managed queue? " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0v-To-hC4">
+                                <rect key="frame" x="184" y="214" width="400" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQH-45-Mhk" customClass="APRoundedButton">
+                                <rect key="frame" x="299" y="353" width="170" height="170"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Yes">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="yesButtonTapped:" destination="Gat-P9-B5e" eventType="touchUpInside" id="gid-4Q-ELH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oc7-j8-HfU" customClass="APRoundedButton">
+                                <rect key="frame" x="299" y="643" width="170" height="170"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="No">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="noButonTapped:" destination="Gat-P9-B5e" eventType="touchUpInside" id="K3N-5c-tbg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="nameAndAddressLabel" destination="8jO-V5-awd" id="eiU-OR-ls2"/>
+                        <outlet property="noButton" destination="oc7-j8-HfU" id="wi8-O3-qul"/>
+                        <outlet property="quitQueueLabel" destination="r0v-To-hC4" id="aEE-nk-oTa"/>
+                        <outlet property="yesButton" destination="BQH-45-Mhk" id="D5z-Ci-M1G"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JiB-YN-BSq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2596" y="-351"/>
+        </scene>
+        <!--Look For Queue View Controller-->
+        <scene sceneID="ghb-X0-h22">
+            <objects>
+                <viewController storyboardIdentifier="LookForQueue" id="yOk-wa-lc5" customClass="LookForQueueViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9KI-9i-WGh"/>
+                        <viewControllerLayoutGuide type="bottom" id="Kvz-RI-cc0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jen-km-K7M">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="deM-X5-94h">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="755"/>
+                                <connections>
+                                    <outlet property="delegate" destination="yOk-wa-lc5" id="EHA-S1-Agd"/>
+                                </connections>
+                            </mapView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="84" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="9rJ-QW-HZa">
+                                <rect key="frame" x="0.0" y="554" width="768" height="470"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LineDetailCell" rowHeight="84" id="zyk-tS-hbc" customClass="LineDetailCell">
+                                        <rect key="frame" x="0.0" y="22" width="768" height="84"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zyk-tS-hbc" id="FQ3-Ge-t0N">
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="83"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name of queue" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ml2-QO-M3g">
+                                                    <rect key="frame" x="86" y="15" width="637" height="21"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZP-Kq-hsK">
+                                                    <rect key="frame" x="86" y="42" width="519" height="21"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Distance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZvD-6E-vA1">
+                                                    <rect key="frame" x="642" y="42" width="81" height="28"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ywT-FH-Mvv" customClass="VqLabel">
+                                                    <rect key="frame" x="13" y="6" width="65" height="65"/>
+                                                    <color key="backgroundColor" red="1" green="0.95719126040000002" blue="0.23581673010000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="addressLabel" destination="KZP-Kq-hsK" id="CF1-e9-z6R"/>
+                                            <outlet property="disatnceLabel" destination="ZvD-6E-vA1" id="une-LJ-N1u"/>
+                                            <outlet property="queueNameLabel" destination="Ml2-QO-M3g" id="NbL-Du-FzK"/>
+                                            <outlet property="waitingUserLabel" destination="ywT-FH-Mvv" id="0Ih-DP-NpN"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="yOk-wa-lc5" id="uDW-dw-u1b"/>
+                                    <outlet property="delegate" destination="yOk-wa-lc5" id="dXp-dt-i4L"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GsL-ef-3yR" customClass="APRoundedButton">
+                                <rect key="frame" x="571" y="64" width="150" height="150"/>
+                                <color key="backgroundColor" red="1" green="0.50323167020000004" blue="0.066582127389999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Open Line">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="openLineButtonTapped:" destination="yOk-wa-lc5" eventType="touchUpInside" id="SDb-vr-BOD"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WFz-oW-fMb">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="98"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGR-fQ-Of5" customClass="APRoundedButton">
+                                        <rect key="frame" x="20" y="32" width="45" height="45"/>
+                                        <color key="backgroundColor" red="1" green="0.86668779259999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                                <integer key="value" value="13"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="searchButtonTapped:" destination="yOk-wa-lc5" eventType="touchUpInside" id="gFG-93-iEs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JBy-gA-Mi8">
+                                        <rect key="frame" x="-53" y="35" width="65" height="37"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Abort">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="abortButtonTapped:" destination="yOk-wa-lc5" eventType="touchUpInside" id="6Gi-Nm-8Kv"/>
+                                        </connections>
+                                    </button>
+                                    <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Search for location" translatesAutoresizingMaskIntoConstraints="NO" id="J0i-Um-ojO">
+                                        <rect key="frame" x="-500" y="30" width="506" height="44"/>
+                                        <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="yOk-wa-lc5" id="WDb-li-r1q"/>
+                                        </connections>
+                                    </searchBar>
+                                </subviews>
+                                <color key="backgroundColor" red="0.76931895380000004" green="0.76931895380000004" blue="0.76931895380000004" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="abortButton" destination="JBy-gA-Mi8" id="oqw-pF-nAC"/>
+                        <outlet property="mapView" destination="deM-X5-94h" id="MCp-NH-5ph"/>
+                        <outlet property="openLineButton" destination="GsL-ef-3yR" id="Mee-5a-aPN"/>
+                        <outlet property="searchButton" destination="aGR-fQ-Of5" id="ifs-tC-i96"/>
+                        <outlet property="searchTextField" destination="J0i-Um-ojO" id="W9Z-IR-2dW"/>
+                        <outlet property="tableView" destination="9rJ-QW-HZa" id="pma-ld-sdU"/>
+                        <outlet property="topView" destination="WFz-oW-fMb" id="5gx-xL-vw6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C4G-vn-cXa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-391" y="815"/>
+        </scene>
+        <!--Open Queue With Current Location View Controller-->
+        <scene sceneID="VwI-o4-qy5">
+            <objects>
+                <viewController storyboardIdentifier="OpenQueueWithCurrentLocation" id="AeG-gw-gog" customClass="OpenQueueWithCurrentLocationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rLc-Z4-WGc"/>
+                        <viewControllerLayoutGuide type="bottom" id="uX1-U6-wJW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fvi-3B-Lc9">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Street Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5pV-a0-c4m">
+                                <rect key="frame" x="26" y="127" width="717" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.7532282777" blue="0.68631251250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="AeG-gw-gog" id="xyZ-Zm-BOw"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Open and manage a line" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ve0-dM-PF5">
+                                <rect key="frame" x="128" y="46" width="400" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.7532282777" blue="0.68631251250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4JH-bs-6o2">
+                                <rect key="frame" x="538" y="178" width="205" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.7532282777" blue="0.68631251250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="AeG-gw-gog" id="yCn-dZ-01N"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="guD-DE-H0J">
+                                <rect key="frame" x="29" y="228" width="717" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.7532282777" blue="0.68631251250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="AeG-gw-gog" id="fhJ-hl-1qI"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip Code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oR2-Nu-iN6">
+                                <rect key="frame" x="29" y="285" width="315" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.7532282777" blue="0.68631251250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="AeG-gw-gog" id="J5G-kl-qMo"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Country Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9B2-KH-EcZ">
+                                <rect key="frame" x="26" y="343" width="717" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.7532282777" blue="0.68631251250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="AeG-gw-gog" id="1JY-0d-WaU"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IZR-97-HSl" customClass="APRoundedButton">
+                                <rect key="frame" x="262" y="627" width="250" height="250"/>
+                                <color key="backgroundColor" red="1" green="0.65032703020000004" blue="0.45376402269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Open Line">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="openLineTapped:" destination="AeG-gw-gog" eventType="touchUpInside" id="eX4-Xq-ddb"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vrr-nL-g50">
+                                <rect key="frame" x="13" y="16" width="101" height="96"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfk-GC-jUO" customClass="APRoundedButton">
+                                        <rect key="frame" x="28" y="25" width="45" height="45"/>
+                                        <color key="backgroundColor" red="1" green="0.50323167020000004" blue="0.066582127389999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="tintColor" red="1" green="0.7532282777" blue="0.68631251250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                                <integer key="value" value="11"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="openQueueButtonTapped:" destination="AeG-gw-gog" eventType="touchUpInside" id="bto-BW-sj3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="OpenQueueButtonView" destination="vrr-nL-g50" id="bjM-KM-UhK"/>
+                        <outlet property="cityName" destination="guD-DE-H0J" id="5o0-Or-6Hz"/>
+                        <outlet property="countryName" destination="9B2-KH-EcZ" id="Ydb-n6-U29"/>
+                        <outlet property="openLineButton" destination="IZR-97-HSl" id="hC4-Bs-Phe"/>
+                        <outlet property="quitManageQueueButton" destination="hfk-GC-jUO" id="h6J-Q8-6kj"/>
+                        <outlet property="streetName" destination="5pV-a0-c4m" id="qgp-Dz-uyn"/>
+                        <outlet property="streetNumber" destination="4JH-bs-6o2" id="WI6-BU-k8b"/>
+                        <outlet property="titleLable" destination="ve0-dM-PF5" id="JIS-FQ-0NV"/>
+                        <outlet property="zipCode" destination="oR2-Nu-iN6" id="izk-06-naU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YMM-vH-1D4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="557" y="799"/>
+        </scene>
+        <!--Join Queue With Counter View Controller-->
+        <scene sceneID="KFD-kb-8lk">
+            <objects>
+                <viewController storyboardIdentifier="JoinQueueWithCounter" id="MZz-tQ-7Yw" customClass="JoinQueueWithCounterViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="abC-Tc-t89"/>
+                        <viewControllerLayoutGuide type="bottom" id="jS4-8H-Lyw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vhh-r8-YMv">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Restaurant Name Address" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="728" translatesAutoresizingMaskIntoConstraints="NO" id="OPy-ZD-aIa">
+                                <rect key="frame" x="20" y="20" width="728" height="69"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How many people do you want to line up?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxH-2R-isb">
+                                <rect key="frame" x="201" y="210" width="416" height="38"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z0v-L1-fqP">
+                                <rect key="frame" x="189" y="379" width="413" height="73"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1O-Wx-Wml" customClass="APRoundedButton">
+                                        <rect key="frame" x="7" y="7" width="60" height="60"/>
+                                        <color key="backgroundColor" red="0.88888571920000004" green="1" blue="0.31388816149999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                                <integer key="value" value="11"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="decreaseCountTapped:" destination="MZz-tQ-7Yw" eventType="touchUpInside" id="QNo-Hb-0fj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UfG-sG-F64" customClass="APRoundedButton">
+                                        <rect key="frame" x="347" y="7" width="60" height="60"/>
+                                        <color key="backgroundColor" red="1" green="0.86668779259999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                                <integer key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="increaseCountTapped:" destination="MZz-tQ-7Yw" eventType="touchUpInside" id="Moy-hf-WjK"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1 Pers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Om-lM-ip1">
+                                        <rect key="frame" x="165" y="26" width="82" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Short Information about the venue and what all is about.." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="386" translatesAutoresizingMaskIntoConstraints="NO" id="U2u-Dn-Nqm">
+                                <rect key="frame" x="216" y="547" width="386" height="49"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ea-A6-B5J" customClass="APRoundedButton">
+                                <rect key="frame" x="309" y="712" width="200" height="200"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Join Line">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="joinLineButtonTapped:" destination="MZz-tQ-7Yw" eventType="touchUpInside" id="CmT-X2-kdi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="guU-os-vT2" customClass="APRoundedButton">
+                                <rect key="frame" x="40" y="939" width="45" height="45"/>
+                                <color key="backgroundColor" red="1" green="0.86668779259999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                        <integer key="value" value="11"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="quitLineButtonTapped:" destination="MZz-tQ-7Yw" eventType="touchUpInside" id="shJ-FA-vEL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="counterView" destination="z0v-L1-fqP" id="pdb-Mf-k9O"/>
+                        <outlet property="decreseaseCountButton" destination="X1O-Wx-Wml" id="OCG-8N-2Yk"/>
+                        <outlet property="increseaseCountButton" destination="UfG-sG-F64" id="wnu-fH-ybD"/>
+                        <outlet property="joinLineButton" destination="9ea-A6-B5J" id="aOb-3i-trG"/>
+                        <outlet property="nameAndAddressLabel" destination="OPy-ZD-aIa" id="c6L-m0-1Dh"/>
+                        <outlet property="numberOfPersonLabel" destination="9Om-lM-ip1" id="nqZ-6z-GUb"/>
+                        <outlet property="questionLabel" destination="kxH-2R-isb" id="8WP-c2-xqE"/>
+                        <outlet property="quitLineButton" destination="guU-os-vT2" id="7HL-7g-3Wy"/>
+                        <outlet property="shortDescriptionLabel" destination="U2u-Dn-Nqm" id="YKX-15-G1h"/>
+                        <segue destination="sSY-pi-yQq" kind="custom" identifier="JoinQueueWithCounterToQuitLineSegue" customClass="SlideLeftCustomSegue" id="m21-UM-mYs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iv1-af-htq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="577" y="2058"/>
+        </scene>
+        <!--Join Queue View Controller-->
+        <scene sceneID="yMF-yX-lUz">
+            <objects>
+                <viewController storyboardIdentifier="JoinQueue" id="ybW-Xz-OnW" customClass="JoinQueueViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2kY-3n-AEF"/>
+                        <viewControllerLayoutGuide type="bottom" id="uyg-v8-I2N"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RgT-jN-59Y">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Restaurant Name Address" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="728" translatesAutoresizingMaskIntoConstraints="NO" id="Shb-1o-iKR">
+                                <rect key="frame" x="20" y="20" width="728" height="69"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Short Information about the venue and what all is about.." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="604" translatesAutoresizingMaskIntoConstraints="NO" id="IuG-bY-7NM">
+                                <rect key="frame" x="88" y="234" width="604" height="49"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BHX-K2-hke" customClass="APRoundedButton">
+                                <rect key="frame" x="240" y="515" width="300" height="300"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Join Line">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="joinLineButtonTapped:" destination="ybW-Xz-OnW" eventType="touchUpInside" id="kPL-78-eug"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m83-xF-GZz" customClass="APRoundedButton">
+                                <rect key="frame" x="20" y="958" width="45" height="45"/>
+                                <color key="backgroundColor" red="1" green="0.86668779259999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                        <integer key="value" value="11"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="quitLineButtonTapped:" destination="ybW-Xz-OnW" eventType="touchUpInside" id="Obz-DO-kux"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="joinLineButton" destination="BHX-K2-hke" id="Kbs-PH-VIl"/>
+                        <outlet property="nameAndAddressLabel" destination="Shb-1o-iKR" id="gEZ-Oh-1tS"/>
+                        <outlet property="quitLineButton" destination="m83-xF-GZz" id="4bA-5K-mcg"/>
+                        <outlet property="shortDescriptionLabel" destination="IuG-bY-7NM" id="wlV-JC-Vby"/>
+                        <segue destination="sSY-pi-yQq" kind="custom" identifier="JoinQueueToQuitLineSegue" customClass="SlideLeftCustomSegue" id="Nl3-ex-Dht"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l8O-6d-K9m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1669" y="824"/>
+        </scene>
+        <!--Push Up Notification View Controller-->
+        <scene sceneID="Sh0-rv-Kae">
+            <objects>
+                <viewController storyboardIdentifier="PushUpNotification" id="JkW-rL-Pxn" customClass="PushUpNotificationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Z1t-xj-cDt"/>
+                        <viewControllerLayoutGuide type="bottom" id="VQV-ba-jV9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="b4J-31-gdm">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qMT-FN-oBH">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="122"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Restaurnt Name Address" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="733" translatesAutoresizingMaskIntoConstraints="NO" id="Gqu-iQ-SBY">
+                                        <rect key="frame" x="18" y="26" width="733" height="69"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.95032559679999995" green="1" blue="0.73163393939999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aGc-SP-upX">
+                                <rect key="frame" x="0.0" y="120" width="768" height="904"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your waiting name is Stuttgart" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="219" translatesAutoresizingMaskIntoConstraints="NO" id="DU0-uz-8rs">
+                                        <rect key="frame" x="275" y="102" width="219" height="110"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You are on 10th Postion its ur turn. Its your turn soon. Consider the move near to counter" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="603" translatesAutoresizingMaskIntoConstraints="NO" id="XFH-3E-Ov3">
+                                        <rect key="frame" x="83" y="774" width="603" height="61"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6z-U5-Fel" customClass="APRoundedButton">
+                                        <rect key="frame" x="209" y="292" width="350" height="350"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10 Your Position" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="153" translatesAutoresizingMaskIntoConstraints="NO" id="dpa-Ul-UQh">
+                                        <rect key="frame" x="308" y="408" width="153" height="118"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="liy-84-xo5" customClass="APRoundedButton">
+                                        <rect key="frame" x="38" y="829" width="45" height="45"/>
+                                        <color key="backgroundColor" red="1" green="0.65032703020000004" blue="0.45376402269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                                <integer key="value" value="11"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="quitLineButtonTapped:" destination="JkW-rL-Pxn" eventType="touchUpInside" id="sRH-a6-QOq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.86668779259999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="currentPositionButton" destination="a6z-U5-Fel" id="yBi-jR-Bvp"/>
+                        <outlet property="currentPositionLabel" destination="dpa-Ul-UQh" id="guP-S2-vZO"/>
+                        <outlet property="explanationLabel" destination="XFH-3E-Ov3" id="Lav-sg-sCO"/>
+                        <outlet property="mainView" destination="aGc-SP-upX" id="rRR-l3-g9Q"/>
+                        <outlet property="nameAndAddressLabel" destination="Gqu-iQ-SBY" id="Vc0-IU-00p"/>
+                        <outlet property="quitLineButton" destination="liy-84-xo5" id="OwS-1q-Pos"/>
+                        <outlet property="topView" destination="qMT-FN-oBH" id="uaI-UD-sId"/>
+                        <outlet property="userWaitingNameLabel" destination="DU0-uz-8rs" id="xVN-hR-yNv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gtP-gf-sJL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2830" y="824"/>
+        </scene>
+        <!--Thank You View Controller-->
+        <scene sceneID="aXl-bS-Txk">
+            <objects>
+                <viewController storyboardIdentifier="ThankYouView" id="EDb-qv-Hov" customClass="ThankYouViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fYz-tt-Rxe"/>
+                        <viewControllerLayoutGuide type="bottom" id="QXe-RG-eqD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fUj-T4-nkY">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uae-RF-cQV">
+                                <rect key="frame" x="0.0" y="103" width="768" height="915"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="03o-Y6-tAE" customClass="ThankYouView">
+                                        <rect key="frame" x="164" y="167" width="440" height="440"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hope you saved yourself some time. Thanks for giving anyWait a thumbs up !" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="512" translatesAutoresizingMaskIntoConstraints="NO" id="PJT-mr-eAX">
+                                        <rect key="frame" x="128" y="720" width="512" height="45"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hiN-kX-gmx">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="105"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0V1-dh-dt7">
+                                        <rect key="frame" x="283" y="35" width="202" height="50"/>
+                                        <state key="normal" title="virtualQ Home">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="anyWaitTapped:" destination="EDb-qv-Hov" eventType="touchUpInside" id="Q9H-63-LHU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.95032559679999995" green="1" blue="0.73163393939999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="anyWaitButton" destination="0V1-dh-dt7" id="Ash-p2-H1v"/>
+                        <outlet property="bottomView" destination="Uae-RF-cQV" id="ial-xP-ZV3"/>
+                        <outlet property="thankYouLabel" destination="PJT-mr-eAX" id="xCi-Jz-Lr4"/>
+                        <outlet property="thankYouView" destination="03o-Y6-tAE" id="fBo-rY-epD"/>
+                        <outlet property="topView" destination="hiN-kX-gmx" id="m9V-Lq-Jam"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AtJ-JF-t6Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-374" y="2006"/>
+        </scene>
+        <!--Current Position View Controller-->
+        <scene sceneID="zRn-wm-Akh">
+            <objects>
+                <viewController storyboardIdentifier="CurrentPosition" id="Guv-hV-TBz" customClass="CurrentPositionViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VRd-5O-9ys"/>
+                        <viewControllerLayoutGuide type="bottom" id="S4G-Bc-hQV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9Q9-HD-Wc0">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Restaurant Name Address" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="728" translatesAutoresizingMaskIntoConstraints="NO" id="58I-gK-8Pm">
+                                <rect key="frame" x="20" y="20" width="728" height="69"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your waiting name is" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="246" translatesAutoresizingMaskIntoConstraints="NO" id="XAI-ML-smj">
+                                <rect key="frame" x="261" y="165" width="246" height="79"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mip-Wq-jfJ" customClass="APRoundedButton">
+                                <rect key="frame" x="274" y="373" width="220" height="220"/>
+                                <color key="backgroundColor" red="1" green="0.95719126040000002" blue="0.23581673010000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="currentPostionbuttonTapped:" destination="Guv-hV-TBz" eventType="touchUpInside" id="PaS-Ft-3cn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZC-wu-j1t" customClass="APRoundedButton">
+                                <rect key="frame" x="339" y="655" width="80" height="80"/>
+                                <color key="backgroundColor" red="1" green="0.95719126040000002" blue="0.23581673010000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fH5-Py-A98" customClass="APRoundedButton">
+                                <rect key="frame" x="339" y="820" width="80" height="80"/>
+                                <color key="backgroundColor" red="1" green="0.95719126040000002" blue="0.23581673010000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmu-78-AOh" customClass="APRoundedButton">
+                                <rect key="frame" x="339" y="989" width="80" height="80"/>
+                                <color key="backgroundColor" red="1" green="0.95719126040000002" blue="0.23581673010000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sj2-ch-G0K">
+                                <rect key="frame" x="-54" y="518" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVG-nh-L7L" customClass="APRoundedButton">
+                                <rect key="frame" x="38" y="941" width="45" height="45"/>
+                                <color key="backgroundColor" red="1" green="0.65032703020000004" blue="0.45376402269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                        <integer key="value" value="11"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="quitLineButtonTapped:" destination="Guv-hV-TBz" eventType="touchUpInside" id="fLp-Cy-5GK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="currentPositionButton" destination="mip-Wq-jfJ" id="6dg-Ou-TdD"/>
+                        <outlet property="fourthButton" destination="lmu-78-AOh" id="i1t-c2-2J3"/>
+                        <outlet property="nameAndAddressLabel" destination="58I-gK-8Pm" id="6tr-kQ-QzA"/>
+                        <outlet property="quitLineButton" destination="BVG-nh-L7L" id="Tl8-sU-37m"/>
+                        <outlet property="secondButton" destination="uZC-wu-j1t" id="yk4-WM-zu7"/>
+                        <outlet property="thirdButton" destination="fH5-Py-A98" id="HP6-g9-rKA"/>
+                        <outlet property="userWaitingNameLabel" destination="XAI-ML-smj" id="zEc-ru-eIv"/>
+                        <segue destination="sSY-pi-yQq" kind="custom" identifier="CurrentPostionToQuitLineSegue" customClass="SlideLeftCustomSegue" id="9ub-6f-qfg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="164-o1-OlC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1817" y="2108"/>
+        </scene>
+        <!--Quit Line View Controller-->
+        <scene sceneID="VNb-ie-qPV">
+            <objects>
+                <viewController storyboardIdentifier="QuitLine" id="sSY-pi-yQq" customClass="QuitLineViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bsi-sF-kNG"/>
+                        <viewControllerLayoutGuide type="bottom" id="VAr-yF-OZZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4q9-Ys-gzV">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dsB-4h-zEj">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Restaurant Name Address" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="728" translatesAutoresizingMaskIntoConstraints="NO" id="Cww-Q2-o5t">
+                                <rect key="frame" x="20" y="20" width="728" height="69"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Do you want to quit line? " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yz0-nF-TIK">
+                                <rect key="frame" x="255" y="205" width="259" height="53"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEr-JD-fBg" customClass="APRoundedButton">
+                                <rect key="frame" x="299" y="338" width="170" height="170"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Yes">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="yesButtonTapped:" destination="sSY-pi-yQq" eventType="touchUpInside" id="BTG-yr-kc1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGy-C9-8FW" customClass="APRoundedButton">
+                                <rect key="frame" x="299" y="601" width="170" height="170"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="No">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="noButtonTapped:" destination="sSY-pi-yQq" eventType="touchUpInside" id="M9b-16-BYo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="nameAndAddressLabel" destination="Cww-Q2-o5t" id="D3k-Jh-gZ1"/>
+                        <outlet property="noButton" destination="lGy-C9-8FW" id="Ave-RV-nq6"/>
+                        <outlet property="quitLineLabel" destination="Yz0-nF-TIK" id="r0L-09-ZmZ"/>
+                        <outlet property="yesButton" destination="lEr-JD-fBg" id="9Hi-QY-6is"/>
+                        <segue destination="MZz-tQ-7Yw" kind="custom" identifier="QuitLineToJoinQueueWithCounterSegue" customClass="SlideRigthCustomSegue" id="nd8-vq-qo5"/>
+                        <segue destination="Guv-hV-TBz" kind="custom" identifier="QuitLineToCurrentPositionSegue" customClass="SlideRigthCustomSegue" id="0Dh-hP-xfV"/>
+                        <segue destination="ybW-Xz-OnW" kind="custom" identifier="QuitLineToJoinQueueSegue" customClass="SlideRigthCustomSegue" id="sQ0-gf-dhc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KBh-ez-akC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2979" y="2082"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackOpaque"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="9ub-6f-qfg"/>
+    </inferredMetricsTieBreakers>
+</document>

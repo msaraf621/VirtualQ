@@ -1,0 +1,18 @@
+//
+//  VqLabel.m
+//  VirtualQ
+//
+//  Created by GrepRuby3 on 11/10/14.
+//  Copyright (c) 2014 optimalconsulting. All rights reserved.
+//
+
+#import "VqLabel.h"
+
+@implementation VqLabel
+
+- (void)drawTextInRect:(CGRect)rect {
+    UIEdgeInsets insets = {5, 0, 0, 0};
+    [super drawTextInRect:UIEdgeInsetsInsetRect(rect, insets)];
+}
+
+@end

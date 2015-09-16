@@ -1,0 +1,49 @@
+/*
+  Localizable.strings
+  VirtualQ
+
+  Created by GrepRuby on 02/08/14.
+  Copyright (c) 2014 optimalconsulting. All rights reserved.
+*/
+"searchingLabel"                            = "Searching for lines around you..";
+"open"                                      = "Open";
+"line"                                      = "Line" ;
+"join"                                      = "Join";
+"line1"                                     = "Line";
+"openAndManageLine"                         = "Open and Manage a Line";
+"OneUserCanLineUpMorePeople"                = "One user can line up several people";
+"useCurrentLocation"                        = "Use current location";
+"lineNamePlaceholder"                       = "Enter the name of your line";
+"shortDescPlaceholder"                      = "Short info about the venue";
+"streetNamePlaceholder"                     = "Street Name";
+"streetNumPlaceholder"                      = "Number";
+"cityNamePlaceholder"                       = "City Name";
+"zipCodePlaceholder"                        = "Zip Code";
+"countryNamePlaceholder"                    = "Country Name";
+"peopleAreInTheLine"                        = "People Waiting";
+"Next"                                      = "Next";
+"counter"                                   = "counter";
+"people"                                    = "People";
+"noOneInTheLine"                            = "No one waiting!";
+"chooseNextAfterServing"                    = "Choose Next after serving this customer";
+"dragInNextForCalling"                      = "Drag in 'Next' for calling";
+"quitQueueLabel"                            = "Do you want to quit your managed queue?";
+"Yes"                                       = "Yes";
+"No"                                        = "No";
+"searchForLocation"                         = "Search for Location";
+"cancel"                                    = "Cancel";
+"person"                                    = "Pers";
+"joinQueueWithCounterQuestion"              = "How many people do you want to line up?";
+"quitLineLabel"                             = "Do you want to quit line?";
+"yourWaitingNameIs"                         = "Your waiting name is";
+"yourPosition"                              = "Your position";
+"20ndPosition"                              = "You are on 20th Position. As this count down further, think about going near the counter.";
+"10thPosition"                              = "You are on 10th Position. It's your turn soon. Consider to move near to counter." ;
+"5thPosition"                               = "You are on 5th Position. It's almost your turn. Please wait near the counter.";
+"2ndPosition"                               = "You are on 2nd Position. It's almost your turn. Please wait near the counter.";
+"1stPosition"                               = "You are next. Please wait at the counter.";
+"waitingOverLabel"                          = "It's your turn. Please show this screen with your waiting name at the counter.";
+"youAre"                                    = "You are";
+"up"                                        = "up!";
+"thankYouScreenText"                        = "Hope you saved yourself some time. Thanks for giving virtualQ a thumbs up!";
+"isUp"                                      = "is Up!";

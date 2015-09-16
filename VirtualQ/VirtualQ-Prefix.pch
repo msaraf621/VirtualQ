@@ -1,0 +1,43 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+#define MR_SHORTHAND
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
+#import <AFNetworking/AFNetworking.h>
+#import <AFNetworking/AFHTTPRequestOperationManager.h>
+#import <CoreData/CoreData.h>
+
+
+#import <CoreData+MagicalRecord.h>
+
+#import "AppApi.h"
+#import "VQUser.h"
+#import "VQWaiters.h"
+#import "VQLine.h"
+#import "APRoundedButton.h"
+#import "Localisator.h"
+#import "UIColor+VQ.h"
+#import "UIFont+VQ.h"
+
+
+#define IS_IPHONE (!IS_IPAD)
+#define IS_IPAD (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPhone)
+#define UNI_VAL(iPadVal,iPhoneVal) ((IS_IPAD)? (iPadVal) : (iPhoneVal))
+#define NULL_TO_NIL(obj) ({ __typeof__ (obj) __obj = (obj); __obj == [NSNull null] ? nil : obj; })
+#define AUTOMATIC_REFRESH_TIME 5
+#define IS_IOS8 (([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0 ) ? TRUE : FALSE )
+
+#endif
